@@ -1,0 +1,34 @@
+import java.util.*;
+
+class Program {
+
+  public String tournamentWinner(
+      ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
+    // Write your code here.
+		String best = "";
+		HashMap<String, Integer> scores = new HashMap<>();
+		scores.put(best,0);
+		
+		for(int i=0; i<competitions.size();i++){
+			ArrayList<String> competition = competitions.get(i);
+			int result = results.get(i);
+			if (result == 1) {
+				updateScores(scores,competition.get(0));
+				if(scores.get(competition.get(0)) > scores.get(best))
+					best = competition.get(0);
+			}
+			else {
+				updateScores(scores, competition.get(1));
+				if(scores.get(competition.get(1)) > scores.get(best))
+					best = competition.get(1);
+			}
+		}
+    return best;
+  }
+	void updateScores(HashMap<String, Integer> scores, String team){
+		if(!scores.containsKey(team)){
+			scores.put(team, 3);
+		}
+		scores.put(team, scores.get(team)+3);
+	}
+}
