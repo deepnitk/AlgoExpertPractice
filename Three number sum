@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Program {
+  public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
+    // Write your code here.
+		List<Integer[]> triplets = new ArrayList<Integer[]>();
+		Arrays.sort(array);
+		int l;
+		int r;
+		for (int i=0; i< array.length-2; i++){
+			l = i+1;
+			r= array.length -1;
+			while (l < r) {
+				if((array[i]+ array[l] + array[r]) == targetSum){
+				Integer[] triplet ={array[i],array[l],array[r]};
+					triplets.add(triplet);
+					l++;
+					r--;
+				}
+				else if((array[i]+ array[l] + array[r]) < targetSum)
+								l++;
+				else if((array[i]+ array[l] + array[r]) > targetSum)
+								r--;
+			}
+		}
+    return triplets;
+  }
+}
