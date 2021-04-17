@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Program {
+
+  public static int nodeDepths(BinaryTree root) {
+    // Write your code here.
+		int depth;
+		depth = calculateDepthNodes(root, 0);
+    return depth;
+  }
+	
+	public static int calculateDepthNodes(BinaryTree node, int depth){
+		if(node == null)
+			return 0;
+		return (depth + calculateDepthNodes(node.left, depth+1) + calculateDepthNodes(node.right, depth+1));
+	}
+
+  static class BinaryTree {
+    int value;
+    BinaryTree left;
+    BinaryTree right;
+
+    public BinaryTree(int value) {
+      this.value = value;
+      left = null;
+      right = null;
+    }
+  }
+}
