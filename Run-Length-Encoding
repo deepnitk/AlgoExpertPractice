@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program {
+  public String runLengthEncoding(String string) {
+    // Write your code here.
+		StringBuilder encodedString = new StringBuilder();
+		int currentLength = 1;
+		for(int i=1; i<string.length();i++){
+			char currentChar = string.charAt(i);
+			char previousChar = string.charAt(i-1);
+			if(currentChar != previousChar || currentLength==9){
+				encodedString.append(Integer.toString(currentLength));
+				encodedString.append(previousChar);
+				currentLength=0;
+			}
+			currentLength+=1;
+		}
+		encodedString.append(Integer.toString(currentLength));
+		encodedString.append(string.charAt(string.length()-1));
+		
+    return encodedString.toString();
+  }
+}
