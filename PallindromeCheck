@@ -1,0 +1,16 @@
+import java.util.*;
+
+class Program {
+  public static boolean isPalindrome(String str) {
+    // Write your code here.
+		int start = 0;
+		int last = str.length() -1;
+		while(start<last){
+			if(str.charAt(start) != str.charAt(last))
+				return false;
+			start++;
+			last--;
+		}
+		return true;
+  }
+}
