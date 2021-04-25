@@ -1,0 +1,17 @@
+import java.util.*;
+
+class Program {
+  public static String caesarCypherEncryptor(String str, int key) {
+    // Write your code here.
+		char[] newString = new char[str.length()];
+		int newKey = key % 26;
+		for(int i=0; i<str.length();i++){
+			newString[i] = getNewLetter(str.charAt(i), newKey);
+		}
+    return new String(newString);
+  }
+	public static char getNewLetter(char c, int key){
+		int newLetterCode = c + key;
+		return newLetterCode <= 122 ? (char) newLetterCode : (char)(96 + newLetterCode%122);
+	}
+}
