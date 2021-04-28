@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Program {
+
+  public int firstNonRepeatingCharacter(String string) {
+    // Write your code here.
+		LinkedHashMap<Character, Integer> count = new LinkedHashMap<Character, Integer>();
+		for(int i=0;i< string.length(); i++){
+			char character = string.charAt(i);
+			count.put(character, count.getOrDefault(character, 0)+1);
+		}
+		for(int i =0; i<string.length();i++){
+			char character = string.charAt(i);
+			if(count.get(character)==1){
+				return i;
+			}
+		}
+		return -1;
+  }
+}
