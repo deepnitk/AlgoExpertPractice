@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Program {
+
+  public int firstDuplicateValue(int[] array) {
+    // Write your code here.
+		int minIdx = array.length;
+		for(int i=0;i<array.length;i++){
+			int value = array[i];
+			for(int j=i+1;j<array.length;j++){
+				int valueToCompare = array[j];
+				if(value == valueToCompare){
+					minIdx = Math.min(minIdx, j);
+				}
+			}
+		}
+		if(minIdx == array.length)
+				return -1;
+    return array[minIdx];
+  }
+}
