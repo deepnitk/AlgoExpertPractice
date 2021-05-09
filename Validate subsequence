@@ -4,7 +4,7 @@ class Program {
   public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
     // Write your code here.
 		int i = 0;
-		int j =0;
+		int j = 0;
 		while (i < sequence.size() && j < array.size()){
 			if( sequence.get(i) == array.get(j)){
 				i++;
