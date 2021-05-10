@@ -22,8 +22,9 @@ class Program {
   }
 	
 	public static void calculateBranchSums(BinaryTree node, int runningSum, List<Integer> sums){
-		if(node == null)
+		if(node == null){
 			return;
+		}
 		int newRunningSum = runningSum + node.value;
 		if(node.left == null && node.right == null){
 			sums.add(newRunningSum);
