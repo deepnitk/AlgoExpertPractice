@@ -16,8 +16,8 @@ class Program {
 
   public static List<Integer> branchSums(BinaryTree root) {
     // Write your code here.
-		List<Integer> sums = new ArrayList<Integer>();
-		calculateBranchSums(root, 0, sums);
+	List<Integer> sums = new ArrayList<Integer>();
+	calculateBranchSums(root, 0, sums);
     return sums;
   }
 	
