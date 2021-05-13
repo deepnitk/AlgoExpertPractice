@@ -5,7 +5,7 @@ class Program {
     // Write your code here.
 		char[] newString = new char[str.length()];
 		int newKey = key % 26;
-		for(int i=0; i<str.length();i++){
+		for(int i=0; i<str.length(); i++){
 			newString[i] = getNewLetter(str.charAt(i), newKey);
 		}
     return new String(newString);
