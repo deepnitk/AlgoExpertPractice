@@ -9,7 +9,7 @@ class Program {
 			while ( start< end && array.get(end).equals(toMove)){
 				end--;
 			}
-			if (array.get(start).equals(toMove)){
+			if(array.get(start).equals(toMove)){
 				int temp = array.get(end);
 				array.set(end, array.get(start));
 				array.set(start, temp);
