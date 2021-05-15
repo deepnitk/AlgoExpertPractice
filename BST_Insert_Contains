@@ -10,6 +10,8 @@ class Program {
       this.value = value;
     }
 
+    //Avg: o(log(n)) time | o(1) space
+    //worst o(n) time| o(1) space
     public BST insert(int value) {
 			BST currentNode = this;
 			while(true) {
@@ -35,7 +37,9 @@ class Program {
 			}
       return this;
     }
-
+    
+    //Avg: o(log(n)) time | o(1) space
+    //worst o(n) time| o(1) space
     public boolean contains(int value) {
       // Write your code here.
 			BST currentNode = this;
