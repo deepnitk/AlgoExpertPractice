@@ -1,0 +1,57 @@
+import java.util.*;
+
+class Program {
+  public static BST minHeightBst(List<Integer> array) {
+    // Write your code here.
+    return constructMinHeightBst(array, null, 0, array.size() -1);
+  }
+	
+	public static BST constructMinHeightBst(List<Integer> array, BST bst, int startIdx, int lastIdx){
+		if(startIdx > lastIdx)
+			return null;
+		int mid = (startIdx + lastIdx)/2;
+		BST newNode = new BST(array.get(mid));
+		if(bst == null)
+			bst = newNode;
+		else{
+			if(bst.value > newNode.value){
+				bst.left = newNode;
+				bst = bst.left;
+			}else {
+				bst.right = newNode;
+				bst = bst.right;
+			}
+		}
+		constructMinHeightBst(array, bst, startIdx, mid - 1);
+		constructMinHeightBst(array, bst, mid + 1, lastIdx);
+		return bst;
+	}
+
+  static class BST {
+    public int value;
+    public BST left;
+    public BST right;
+
+    public BST(int value) {
+      this.value = value;
+      left = null;
+      right = null;
+    }
+
+    public void insert(int value) {
+      if (value < this.value) {
+        if (left == null) {
+          left = new BST(value);
+        } else {
+          left.insert(value);
+        }
+      } else {
+        if (right == null) {
+          right = new BST(value);
+        } else {
+          right.insert(value);
+        }
+      }
+    }
+  }
+}
