@@ -30,7 +30,7 @@ class Program {
 						currentNode.right =  newNode;
 						break;
 					}
-					else {
+					else{
 						currentNode = currentNode.right;
 					}
 				}
