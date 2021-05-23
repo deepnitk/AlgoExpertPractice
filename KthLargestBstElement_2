@@ -23,7 +23,7 @@ class Program {
 
   public int findKthLargestValueInBst(BST tree, int k) {
     // Write your code here.
-		TreeInfo treeInfo = new TreeInfo(0,-1);
+		TreeInfo treeInfo = new TreeInfo(0, -1);
 		reverseInOrder(tree, k, treeInfo);
 		return treeInfo.currentVisitedNode;
   }
@@ -33,7 +33,7 @@ class Program {
 			return;
 		reverseInOrder(tree.right, k, treeInfo);
 		if(treeInfo.noOfNodeVisited < k){
-			treeInfo.noOfNodeVisited+=1;
+			treeInfo.noOfNodeVisited+ = 1;
 			treeInfo.currentVisitedNode = tree.value;
 			reverseInOrder(tree.left, k, treeInfo);
 		}
