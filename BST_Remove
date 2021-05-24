@@ -45,7 +45,6 @@ public BST remove(int value){
 		public int getMinValue(){
 			if(left == null)
 				return value;
-			else {
+			else
 				return left.getMinValue();
-			}
 		}
