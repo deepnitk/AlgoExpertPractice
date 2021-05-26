@@ -5,9 +5,9 @@ class Program {
   public int firstDuplicateValue(int[] array) {
     // Write your code here.
 		int minIdx = array.length;
-		for(int i=0;i<array.length;i++){
+		for(int i=0; i<array.length; i++){
 			int value = array[i];
-			for(int j=i+1;j<array.length;j++){
+			for(int j=i+1;j < array.length; j++){
 				int valueToCompare = array[j];
 				if(value == valueToCompare){
 					minIdx = Math.min(minIdx, j);
