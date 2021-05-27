@@ -2,17 +2,15 @@ import java.util.*;
 
 class Program {
   public int[] arrayOfProducts(int[] array) {
-    // Write your code here.
 		int[] newArray = new int[array.length];
-		for(int i=0;i<array.length; i++){
+		for(int i=0; i<array.length; i++){
 			int temp=1;
-			for(int j=0; j<array.length;j++){
+			for(int j=0; j<array.length; j++){
 				if(i!=j){
-					temp*=array[j];
+					temp* = array[j];
 				}
 			}
 			newArray[i]=temp;
-			//temp=1;
 		}
     return newArray;
   }
