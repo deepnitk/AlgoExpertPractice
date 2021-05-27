@@ -13,7 +13,6 @@ class Program {
   }
 
   public int findKthLargestValueInBst(BST tree, int k) {
-    // Write your code here.
 		ArrayList<Integer> array = new ArrayList<>();
 		inOrder(tree, array);
 		return array.get(array.size() - k);
@@ -21,7 +20,7 @@ class Program {
 	
 	public void inOrder(BST tree, ArrayList<Integer> array){
 		if(tree == null)
-			return;
+		   return;
 		inOrder(tree.left, array);
 		array.add(tree.value);
 		inOrder(tree.right, array);
