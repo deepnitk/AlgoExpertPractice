@@ -3,12 +3,11 @@ import java.lang.*;
 class Program {
 
   public int[] sortedSquaredArray(int[] array) {
-    // Write your code here.
 		int s =0 ;
 		int l = array.length -1;
 		int [] output = new int[array.length];
-		for (int i= l ; i>=0 ; i--) {
-			if(Math.abs(array[s])>= Math.abs(array[l])) {
+		for (int i=l ; i>=0 ; i--) {
+			if(Math.abs(array[s]) >= Math.abs(array[l])) {
 				output[i] = array[s]*array[s];
 				s++;
 			}
