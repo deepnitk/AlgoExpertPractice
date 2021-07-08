@@ -4,8 +4,7 @@ public BST remove(int value){
 		}
 		
     public void remove(int value, BST parentNode) {
-      // Write your code here.
-      // Do not edit the return statement of this method.
+
 			BST currentNode = this;
 			
 			while(currentNode != null){
