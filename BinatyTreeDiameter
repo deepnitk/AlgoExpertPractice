@@ -1,7 +1,6 @@
 import java.util.*;
 
 class Program {
-  // This is an input class. Do not edit.
   static class BinaryTree {
     public int value;
     public BinaryTree left = null;
@@ -37,7 +36,6 @@ class Program {
 	
 
   public int binaryTreeDiameter(BinaryTree tree) {
-    // Write your code here.
     return getTreeInfo(tree).dia;
   }
 }
