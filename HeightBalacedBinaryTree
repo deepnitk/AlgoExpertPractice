@@ -22,7 +22,7 @@ class Program {
 	}
 
   public boolean heightBalancedBinaryTree(BinaryTree tree) {
-    // Write your code here.
+
 		TreeInfo treeInfo = getTreeInfo(tree);
 		return treeInfo.isBalanced;
   }
