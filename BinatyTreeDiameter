@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Program {
+  // This is an input class. Do not edit.
+  static class BinaryTree {
+    public int value;
+    public BinaryTree left = null;
+    public BinaryTree right = null;
+
+    public BinaryTree(int value) {
+      this.value = value;
+    }
+  }
+	
+	static class TreeInfo{
+		public int dia;
+		public int height;
+		public TreeInfo(int dia,int height){
+			this.dia = dia;
+			this.height = height;
+		}
+	}
+	
+	public  TreeInfo getTreeInfo(BinaryTree tree){
+		if(tree == null)
+			return new TreeInfo(0,0);
+		TreeInfo leftTreeInfo =  getTreeInfo(tree.left);
+		TreeInfo rightTreeInfo = getTreeInfo(tree.right);
+		
+		int longestPathThroughRoot = leftTreeInfo.height + rightTreeInfo.height;
+		int maxDiaSoFar = Math.max(leftTreeInfo.dia, rightTreeInfo.dia);
+		int currentDia = Math.max(longestPathThroughRoot, maxDiaSoFar);
+		int currentHeight = 1 + Math.max(leftTreeInfo.height, rightTreeInfo.height);
+		
+		return new TreeInfo(currentDia, currentHeight);
+	}
+	
+
+  public int binaryTreeDiameter(BinaryTree tree) {
+    // Write your code here.
+    return getTreeInfo(tree).dia;
+  }
+}
+
