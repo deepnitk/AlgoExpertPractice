@@ -2,7 +2,6 @@ import java.util.*;
 
 class Program {
   public static boolean validateBst(BST tree) {
-    // Write your code here.
 		return validateBst(tree, Integer.MIN_VALUE, Integer.MAX_VALUE);	
   }
 	
