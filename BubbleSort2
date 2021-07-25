@@ -2,7 +2,6 @@ import java.util.*;
 
 class Program {
   public static int[] bubbleSort(int[] array) {
-    // Write your code here.
 		boolean swapped;
 		for(int i=0;i<array.length-1;i++){
 			swapped=false;
