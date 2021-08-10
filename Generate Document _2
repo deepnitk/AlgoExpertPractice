@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program {
+
+  public boolean generateDocument(String characters, String document) {
+
+		HashMap<Character, Integer> count = new HashMap<Character, Integer>();
+		
+		for(int i=0; i< characters.length(); i++){
+			char character = characters.charAt(i);
+			count.put(character, count.getOrDefault(character,0)+1);
+		}
+		
+		for(int i=0; i< document.length(); i++){
+			char character = document.charAt(i);
+			if(!count.containsKey(character) || count.get(character) == 0){
+				return false;
+			}
+			count.put(character, count.get(character)-1);
+		}
+    return true;
+  }
+}
