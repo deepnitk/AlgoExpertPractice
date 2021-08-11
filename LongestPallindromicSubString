@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Program {
+  public static String longestPalindromicSubstring(String str) {
+    // Write your code here.
+		String longest ="";
+		for(int idx=0; idx<str.length();idx++){
+			for(int idx2=idx; idx2<str.length();idx2++){
+				String subString = str.substring(idx,idx2+1);
+				if(subString.length() > longest.length() && isPallindrome(subString)){
+					longest = subString;
+				}
+			}
+		}
+    return longest;
+  }
+	
+	public static boolean isPallindrome(String subString){
+		int leftIdx = 0;
+		int rightIdx = subString.length()-1;
+		while(leftIdx<=rightIdx){
+			if(subString.charAt(leftIdx) != subString.charAt(rightIdx)){
+				return false;
+			}
+			leftIdx++;
+			rightIdx--;
+		}
+		return true;
+	}
+}
