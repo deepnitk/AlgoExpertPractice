@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Program {
+  public static String longestPalindromicSubstring(String str) {
+    // Write your code here.
+		int[] currentLongest = {0,1};
+		for(int idx =1;idx<str.length(); idx++){
+			int[] odd = getLongestPallindromeFrom(str, idx-1,idx+1);
+			int[] even = getLongestPallindromeFrom(str, idx-1,idx);
+			int[] longest = odd[1] - odd[0] > even[1] - even[0] ? odd : even;
+			currentLongest = longest[1] - longest[0] > currentLongest[1] - currentLongest[0] ?
+												longest: currentLongest;
+		}
+    return str.substring(currentLongest[0], currentLongest[1]);
+  }
+	public static int[] getLongestPallindromeFrom(String str, int idx1, int idx2){
+		while(idx1 >=0 && idx2 < str.length()){
+			if(str.charAt(idx1) != str.charAt(idx2)){
+						break;
+			}
+		
+		}
+		idx1--;
+		idx2++;
+		return new int[] {idx1+1,idx2};
+	}
+	
+}
