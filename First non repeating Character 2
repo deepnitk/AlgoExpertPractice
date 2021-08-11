@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Program {
+
+  public int firstNonRepeatingCharacter(String string) {
+    // Write your code here.
+		HashMap<Character, Integer> countMap = new HashMap<Character, Integer>();
+		for(int idx=0; idx < string.length(); idx++){
+			char chracter = string.charAt(idx);
+			countMap.put(chracter, countMap.getOrDefault(chracter, 0)+1);
+		}
+		
+		for(int idx = 0; idx < string.length(); idx++){
+			char chracter = string.charAt(idx);
+			int value = countMap.get(chracter);
+			if(value == 1)
+				return idx;
+		}
+    return -1;
+  }
+}
